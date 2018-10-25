@@ -209,8 +209,8 @@ str_view_all(countries, pattern = "i.a", match=TRUE)
 Exercise: Canada isn't the only country with three interspersed "a"'s. Find the others. Try both `str_view_all()` and `str_subset()`.
 
 ```{r}
-str_view_all(FILL_THIS_IN)
-str_subset(FILL_THIS_IN)
+str_view_all(countries, pattern = "a.a.a", match=TRUE)
+str_subset(countries, pattern = "a.a.a")
 ```
 
 
@@ -358,37 +358,37 @@ Convert `words` to pig latin, which involves:
     - Use `str_c()`.
     
 ```{r}
-YOUR_CODE_HERE
+#YOUR_CODE_HERE
 ```
 
 Find all countries that end in "y"
 
 ```{r}
-str_view_all_match(countries, "YOUR_REGEX_HERE")
+#str_view_all_match(countries, "YOUR_REGEX_HERE")
 ```
 
 Find all countries that have the same letter repeated twice (like "Greece", which has "ee").
 
 ```{r}
-str_view_all_match(countries, "YOUR_REGEX_HERE")
+#str_view_all_match(countries, "YOUR_REGEX_HERE")
 ```
 
 Find all countries that end in two vowels. 
 
 ```{r}
-str_view_all_match(countries, "YOUR_REGEX_HERE")
+#str_view_all_match(countries, "YOUR_REGEX_HERE")
 ```
 
 Find all countries that start with two non-vowels. How is this different from finding all countries that end in _at least_ two non-vowels? Hint: Syria.
 
 ```{r}
-countries %>% 
-    str_to_lower() %>% 
-    str_view_all_match("YOUR_REGEX_HERE")
+#countries %>% 
+#    str_to_lower() %>% 
+#    str_view_all_match("YOUR_REGEX_HERE")
 ```
 
 Find all countries that have either "oo" or "cc" in them.
 
 ```{r}
-str_view_all_match(countries, "YOUR_REGEX_HERE")
+#str_view_all_match(countries, "YOUR_REGEX_HERE")
 ```
