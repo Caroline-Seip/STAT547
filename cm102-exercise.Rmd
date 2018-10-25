@@ -1,7 +1,9 @@
 ---
 title: "STAT 547 Class Meeting 02 Worksheet"
-output: html_notebook
-editor_options: 
+output:
+  html_document:
+    df_print: paged
+editor_options:
   chunk_output_type: inline
 ---
 
@@ -31,13 +33,14 @@ There's that famous sentence about the quick brown fox that contains all letters
 `str_subset(string, pattern)`
 
 ```{r}
-fox <- str_subset(FILL_THIS_IN, FILL_THIS_IN)
+(fox <- str_subset(sentences, pattern = "fox"))
 ```
 
 Not quite the sentence I was thinking of. How many words does it contain? Use `str_split(string, pattern)`, noting its output (list).
 
 ```{r}
-str_split(FILL_THIS_IN, FILL_THIS_IN)
+str_split(fox, pattern=" ") [[1]] %>%  length()
+str_split(sentences, pattern=" ") %>%  head()
 ```
 
 Exercise: does this sentence contain all letters of the alphabet? Hints: 
@@ -47,9 +50,10 @@ Exercise: does this sentence contain all letters of the alphabet? Hints:
 - Use the base R `table()` function.
 
 ```{r}
-fox %>% 
-  str_split(FILL_THIS_IN) %>% 
-  FILL_THIS_IN
+  str_split(fox, pattern = "") [[1]] %>% 
+  str_to_lower() %>% 
+  unique() %>% 
+  length()
 ```
 
 
@@ -65,7 +69,7 @@ Demo: we can substitute, too. Replace the word "fox" with "giraffe" using `str_r
 
 ```{r}
 fox %>% 
-    str_replace(FILL_THIS_IN)
+    str_replace(pattern = "fox", replacement= "giraffe")
 ```
 
 Know the position you want to extract/replace? Try `str_sub()`.
