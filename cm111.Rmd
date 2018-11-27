@@ -1,11 +1,14 @@
 ---
-title: "Class Meeting 11: Getting Data from the Web, Part 1"
+title: 'Class Meeting 11: Getting Data from the Web, Part 1'
 output:
-    html_notebook:
-        toc: true
-        theme: cerulean
-        number_sections: true
-editor_options: 
+  html_document:
+    df_print: paged
+    toc: yes
+  html_notebook:
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+editor_options:
   chunk_output_type: inline
 ---
 
@@ -78,11 +81,14 @@ simple_page %>% html_text #%>% cat()
 
 ```{r}
 simple_page %>% 
-	html_nodes("p")
+	html_nodes("p") %>% 
+  html_text()
 simple_page %>% 
-	html_nodes(FILL_THIS_IN)
+	html_nodes("a") %>% 
+html_text()
 simple_page %>% 
-	html_nodes(FILL_THIS_IN)
+	html_nodes("#wiki") %>% 
+  html_text()
 ```
 
 
@@ -98,16 +104,16 @@ Return the text in `simple_page` contained within:
 
 ```{r}
 simple_page %>% 
-	html_nodes(FILL_THIS_IN) %>% 
-	FILL_THIS_IN
+	html_nodes("p a") %>% 
+	html_text()
 ```
 
 2. any tag.
 
 ```{r}
 simple_page %>% 
-	html_nodes(FILL_THIS_IN) %>% 
-	FILL_THIS_IN
+	html_nodes("*") %>% 
+	html_text()
 ```
 
 
