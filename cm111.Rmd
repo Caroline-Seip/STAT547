@@ -22,7 +22,7 @@ This means reading webpages like [this wikipedia page](https://en.wikipedia.org/
 
 1. Install [`rvest`](https://github.com/hadley/rvest): `install.packages("rvest")`.
 
-```{r}
+```{r error=TRUE}
 install.packages("rvest")
 ```
 
@@ -57,7 +57,7 @@ We'll use `rvest` to read in parts of `cm111-simple_script.html` into R.
 
 1. Apply `read_html()` to the file: reads in the page, outputs a special R object.
 
-```{r}
+```{r error=TRUE}
 simple_page <- read_html("cm111-simple_script.html")
 ```
 
@@ -148,7 +148,7 @@ simple_page %>%
 
 - Make a tibble of hyperlink text and their associated url's:
 
-```{r}
+```{r error=TRUE}
 tibble(
 	text = FILL_THIS_IN,
 	url  = FILL_THIS_IN
@@ -187,7 +187,7 @@ We've already seen `readr`, but what about importing other data types?
 
 - JSON, with the `jsonlite` package. Examples from the `fromJSON()` documentation:
 
-```{r}
+```{r error=TRUE}
 library(tidyverse)
 install.packages("jsonlite")
 jsonlite::fromJSON('{"city" : "Z\\u00FCrich"}') # A list
@@ -200,7 +200,7 @@ toJSON(mtcars, pretty=TRUE)
 - XML, with the `xml2` package (similar to reading webpages).
 	- [Example from w3cshools](https://www.w3schools.com/xml/simple.xml)
 
-```{r}
+```{r error=TRUE}
 read_xml("https://www.w3schools.com/xml/simple.xml") %>% 
 	as_list()
 ```
